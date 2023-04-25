@@ -1,1 +1,0 @@
-Les best_weights sont numéroté en fonction de la version à laquelle ils correpondent. Ainsi yolov4-custom_best7.weights correspond à la 7e version dont les paramètres utilisés pour l'entraînement peuvent être trouvés dans le dossier resultats, dans un fichier excel.
