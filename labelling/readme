@@ -1,0 +1,48 @@
+
+
+###################   Utilisation de l'outil de labelling   ###############################
+
+
+
+Deux cas distincts: 
+- soit une image positive correspond à une image de voies biliaires visualisées par produit de contraste 
+- soit c'est une image appelée negative qui ne contient pas de produit de contraste.
+
+
+
+
+######Pour les image positives: #########
+
+- Toutes les images positives doivent être déposée dans le dossier ./Images/Biliary_ducts
+- Elles doivent être au format .bmp si cela n'est pas le cas, au choix:
+	- convertir l'image
+	- modifier les utilitaires avec .jpg ou .png 
+	
+1) bbox_tool.py:
+- lancer en ligne de commande: python3 bbox_tool.py
+- chosissez le chemin ./Images/Biliary_ducts
+- réaliser le labelling créant des fichiers.txt
+- (si les Images sont trop grandes pour la fenetre graphique modifier le parametre basewidth de la fonction loadImage en le diminuant et conserver le nombre)
+- (le dossier Examples reste vide mais est nécessaire au bon fonctionnement de bbox_tool.py)
+
+
+2) copier les fichiers .txt dans ./Labels/Biliary_ducts (supprimer le fichier list.txt qui est créer et ne pas le copier +++)
+
+3) resize.py
+- Si dans bbox_tool.py vous avez modifiez basewidth vous devrez changer le parametre modification de resize.py en ecrivant le même nombre. 
+- lancer en ligne de commande: python3 resize.py
+- (Celui_ci va modifier le fichier .txt précdant en le reformatant à la bonne taille.La sortie se fera dans ./Labels/resize_Biliary_ducts)
+
+4) convert.py
+- Penser à bien modifier votre chemin absolue pour que celui ci prenne en entrée ./Labels/resize_Biliary_ducts et en sortie ./Labels/output_Biliary_ducts
+- lancer en ligne de commande: python3 convert.py
+
+
+
+
+
+######Pour les image négatives: #########
+- Toutes les images positives doivent être déposée dans le dossier ./Images/img_neg
+
+- lancer en ligne de commande: python3 label_neg.py
+(sort un fichier .txt vide par image dans ./Labels/img_neg , c'est normal ! )
