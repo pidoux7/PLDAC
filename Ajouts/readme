@@ -19,3 +19,23 @@
 - Si l'echantillon ne contient pas d'images négatives : mettre la variable img_neg à false 
 - Si vous souhaitez changez le ratio du split train/total modifier la variable pourcent dans la partie images positives et images negatives
 - les fichiers de sortie seront train.txt et test.txt au format yolo
+
+##### split_aug #####
+- doit être lancé après process.py
+- Si vous voulez ajouter de la data augmentation et que vos images ont au préalable bien été ajoutées à ./data/piford, 
+modifiez la variable argument pour choisir quel data_augmentation vous souhaitez dans la liste donnée en commentaire
+#argument = ['eq','stretch','r90','r180','r270','flip','blur','gauss','motion']
+-eq : histogram equalizer
+-stretch : histogram stretching
+-r90, r180, r270 : rotation à 90, 180 et 270 degrés 
+-flip: retourne l'image selon l'axe horizontal
+-blur: ajout d'un filtre gaussien
+-gauss: ajout d'un bruit gaussien
+-motion: flou de mouvement
+
+- le fichier de sortie modifiera train.txt afin d'inclure les images avec data augmentation.
+
+##### evaluation.py #####
+- Ce fichier permet de réaliser toutes les métriques d'évaluations que nous avons utilisés
+- regroupe les résultats dans prédictions stats: IoU, Map, matrice de confusion, confidence score, temps de prédiction, précision, rappel
+- regroupe dans prédictions : images testées avec Bbox réelle et Bbox prédite ainsique que les Bbox prédites au format.txt
