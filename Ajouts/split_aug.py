@@ -1,4 +1,7 @@
 import os
+
+# choisissez parmis la liste en commentaire le type de data_augmentation que vous souhaitez
+# ceux ci seront ajouté à train.txt 
 argument = ['eq','stretch']
 #argument = ['eq','stretch','r90','r180','r270','flip','blur','gauss','motion']
 
@@ -28,6 +31,9 @@ def split_aug(arg):
                 f.write(lines[i][:-5] + '_gauss' + lines[i][-5:])
             if 'motion' in arg:
                 f.write(lines[i][:-5] + '_motion' + lines[i][-5:])
+                
+                
+    # pour ajouter sur test.txt vous pouvez décommenter les lignes ci dessous
     """
     with open('test_split.txt', 'r') as f:
         lines = f.readlines()
