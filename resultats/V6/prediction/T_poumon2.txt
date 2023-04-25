@@ -1,0 +1,9 @@
+[
+{
+ "frame_id":1, 
+ "filename":"data/piford/T_poumon2.bmp", 
+ "objects": [ 
+
+ ] 
+}
+]

@@ -1,0 +1,10 @@
+[
+{
+ "frame_id":1, 
+ "filename":"data/piford/T_cerv.bmp", 
+ "objects": [ 
+  {"class_id":0, "name":"Biliary_ducts", "relative_coordinates":{"center_x":0.570692, "center_y":0.437300, "width":1.089859, "height":1.423816}, "confidence":0.176133}, 
+  {"class_id":0, "name":"Biliary_ducts", "relative_coordinates":{"center_x":0.352868, "center_y":0.436152, "width":0.740698, "height":1.075731}, "confidence":0.162043}
+ ] 
+}
+]

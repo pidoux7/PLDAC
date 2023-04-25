@@ -1,0 +1,17 @@
+data/piford/T_poumon.bmp: 749.163 ms
+data/piford/T_poumon2.bmp: 641.804 ms
+data/piford/T_abdo.bmp: 841.01 ms
+data/piford/T_coro.bmp: 660.752 ms
+data/piford/T_cerv.bmp: 812.961 ms
+data/piford/T_ucg.bmp: 641.29 ms
+data/piford/0041408.bmp: 823.709 ms
+data/piford/0017404.bmp: 672.235 ms
+data/piford/0011403.bmp: 853.339 ms
+data/piford/0048405.bmp: 663.382 ms
+data/piford/0039404.bmp: 852.759 ms
+data/piford/0025402.bmp: 656.89 ms
+data/piford/0044413.bmp: 837.051 ms
+
+Average prediction time for 13 images: 746.642 ms
+
+Frame per second calculated on 13 images: 1.339

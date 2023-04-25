@@ -1,0 +1,9 @@
+[
+{
+ "frame_id":1, 
+ "filename":"data/piford/T_coro.bmp", 
+ "objects": [ 
+  {"class_id":0, "name":"Biliary_ducts", "relative_coordinates":{"center_x":0.508347, "center_y":0.501170, "width":0.806517, "height":1.002718}, "confidence":0.873239}
+ ] 
+}
+]
