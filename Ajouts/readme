@@ -1,0 +1,21 @@
+
+
+############################ Dossier Ajouts ################################
+
++++++++++++++++ Ce dossier est essentiel au bon fonctionnement de yolo !!! ++++++++++++++++++
+
+
+##### piford.names #####
+- contient le nom des classes : ici Biliairy_ducts
+
+##### piford.data #####
+- contient le nb de classe 
+- les chemins pour le train et test 
+- le lien vers le nom des classes (piford.names au dessus)
+- le chemin pour l'enregistrement des poids du modèle
+
+##### process.py ######
+- réalise un split en train/test prenant en compte le fait que des images d'un même patient ne peuvent appartenir au train et au test en même temps
+- Si l'echantillon ne contient pas d'images négatives : mettre la variable img_neg à false 
+- Si vous souhaitez changez le ratio du split train/total modifier la variable pourcent dans la partie images positives et images negatives
+- les fichiers de sortie seront train.txt et test.txt au format yolo
