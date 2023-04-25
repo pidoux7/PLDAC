@@ -1,0 +1,9 @@
+
+
+################## Dossier Modifications #####################
+
++++++++++++ ce dossier est essentiel au bon fonctionnement de yolo !!! +++++++++++
+
+- il comprend deux fichier data.c et data.h 
+- Ces fichiers issus du repository darknet ont été modifiés afin de prendre en compte dans les batchs et l'echantillon de validation
+que des images appartenant à un même patients ne peuvent se retrouver dans le batch et l'echantillon de validation
