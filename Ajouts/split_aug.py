@@ -5,32 +5,41 @@ import os
 argument = ['eq','stretch']
 #argument = ['eq','stretch','r90','r180','r270','flip','blur','gauss','motion']
 
+def get_list_images_neg():
+    images = []
+    for file in os.listdir('data/negative_images'):
+        if file.endswith('.bmp'):
+            images.append(file)
+    return images
+
 def split_aug(arg):
     with open('data/train.txt', 'r') as f:
         lines = f.readlines()
     
+    img_neg = get_list_images_neg()
+    
     with open('data/train.txt', 'w') as f:
         for i in range(len(lines)):
             f.write(lines[i])
-            if 'eq' in arg:
-                print('hello')
-                f.write(lines[i][:-5] + '_eq' + lines[i][-5:])
-            if 'stretch' in arg:  
-                f.write(lines[i][:-5] + '_stretch' + lines[i][-5:])
-            if 'r90' in arg:
-                f.write(lines[i][:-5] + '_r90' + lines[i][-5:])
-            if 'r180' in arg:
-                f.write(lines[i][:-5] + '_r180' + lines[i][-5:])
-            if 'r270' in arg:
-                f.write(lines[i][:-5] + '_r270' + lines[i][-5:])
-            if 'flip' in arg:
-                f.write(lines[i][:-5] + '_flip' + lines[i][-5:])
-            if 'blur' in arg:
-                f.write(lines[i][:-5] + '_blur' + lines[i][-5:])    
-            if 'gauss' in arg:
-                f.write(lines[i][:-5] + '_gauss' + lines[i][-5:])
-            if 'motion' in arg:
-                f.write(lines[i][:-5] + '_motion' + lines[i][-5:])
+            if lines[12:] not in img_neg : 
+                if 'eq' in arg:
+                    f.write(lines[i][:-5] + '_eq' + lines[i][-5:])
+                if 'stretch' in arg:  
+                    f.write(lines[i][:-5] + '_stretch' + lines[i][-5:])
+                if 'r90' in arg:
+                    f.write(lines[i][:-5] + '_r90' + lines[i][-5:])
+                if 'r180' in arg:
+                    f.write(lines[i][:-5] + '_r180' + lines[i][-5:])
+                if 'r270' in arg:
+                    f.write(lines[i][:-5] + '_r270' + lines[i][-5:])
+                if 'flip' in arg:
+                    f.write(lines[i][:-5] + '_flip' + lines[i][-5:])
+                if 'blur' in arg:
+                    f.write(lines[i][:-5] + '_blur' + lines[i][-5:])    
+                if 'gauss' in arg:
+                    f.write(lines[i][:-5] + '_gauss' + lines[i][-5:])
+                if 'motion' in arg:
+                    f.write(lines[i][:-5] + '_motion' + lines[i][-5:])
                 
                 
     # pour ajouter sur test.txt vous pouvez décommenter les lignes ci dessous
@@ -41,23 +50,24 @@ def split_aug(arg):
     with open('test.txt', 'w') as f:
         for i in range(len(lines)):
             f.write(lines[i])
-            if 'eq' in arg:
-                f.write(lines[i][:-5] + '_eq' + lines[i][-5:])
-            if 'stretch' in arg:  
-                f.write(lines[i][:-5] + '_stretch' + lines[i][-5:])
-            if 'r90' in arg:
-                f.write(lines[i][:-5] + '_r90' + lines[i][-5:])
-            if 'r180' in arg:
-                f.write(lines[i][:-5] + '_r180' + lines[i][-5:])
-            if 'r270' in arg:
-                f.write(lines[i][:-5] + '_r270' + lines[i][-5:])
-            if 'flip' in arg:
-                f.write(lines[i][:-5] + '_flip' + lines[i][-5:])
-            if 'blur' in arg:
-                f.write(lines[i][:-5] + '_blur' + lines[i][-5:])    
-            if 'gauss' in arg:
-                f.write(lines[i][:-5] + '_gauss' + lines[i][-5:])
-            if 'motion' in arg:
-                f.write(lines[i][:-5] + '_motion' + lines[i][-5:])
+            if lines[12:] not in img_neg : 
+                if 'eq' in arg:
+                    f.write(lines[i][:-5] + '_eq' + lines[i][-5:])
+                if 'stretch' in arg:  
+                    f.write(lines[i][:-5] + '_stretch' + lines[i][-5:])
+                if 'r90' in arg:
+                    f.write(lines[i][:-5] + '_r90' + lines[i][-5:])
+                if 'r180' in arg:
+                    f.write(lines[i][:-5] + '_r180' + lines[i][-5:])
+                if 'r270' in arg:
+                    f.write(lines[i][:-5] + '_r270' + lines[i][-5:])
+                if 'flip' in arg:
+                    f.write(lines[i][:-5] + '_flip' + lines[i][-5:])
+                if 'blur' in arg:
+                    f.write(lines[i][:-5] + '_blur' + lines[i][-5:])    
+                if 'gauss' in arg:
+                    f.write(lines[i][:-5] + '_gauss' + lines[i][-5:])
+                if 'motion' in arg:
+                    f.write(lines[i][:-5] + '_motion' + lines[i][-5:])
     """ 
 split_aug(argument)
