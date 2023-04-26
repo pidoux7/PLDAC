@@ -1,14 +1,14 @@
 
 
-########## utilisation du dossier visualisation_and_data_augmentation ##########
+########## Utilisation du dossier visualisation_and_data_augmentation ##########
 
          ########## data_aug.ipynp ##########
 
-- Ce jupyter permet à partir d'image et de leur label associé de pouvoir créer de nouvelles images avec data augmentation
+- Ce jupyter permet à partir d'images et de leur label associé de pouvoir créer de nouvelles images avec data augmentation
 1) lancer la première et la deuxième cellule pour charger les images et les labels .
-2) Si vos images originales ne sont pas encore dans piford, la 3ème cellule permettra de réaliser le transfert
-3) Rendez vous dans la partie du notebook correspondant à la data augmentation que vous souhaitez créer et lancés les cellules correspondantes
+2) Si vos images originales ne sont pas encore dans piford, la 3ème cellule permettra de réaliser le transfert.
+3) Rendez vous dans la partie du notebook correspondant à la data augmentation que vous souhaitez créer et lancer les cellules correspondantes.
 
           ########## data_augmentation.ipynb et data_vizualisation.ipynb ##########
           
-- Ces des outils de data_visalisations qui permettent de décrire l'échantillon et d'observer les effets de certaines data_augmentations. 
+- Il s'agit d'outils de data_visalisations permettant de décrire l'échantillon et d'observer les effets de certaines data_augmentations. 
