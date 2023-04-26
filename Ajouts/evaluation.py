@@ -4,17 +4,16 @@ import numpy as np
 import json
 import cv2
 from matplotlib import pyplot as plt
-from mapcalc import calculate_map
 from sklearn.metrics import average_precision_score
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import precision_score
 from sklearn.metrics import recall_score
 from sklearn.metrics import average_precision_score
 from sklearn.metrics import auc
-
 import itertools
 import shutil
 import math
+import argparse
 
 
 def get_images_test(filename_test):
@@ -225,7 +224,7 @@ def liste_IoU(dict_true, dict_coord):
     scores_iou = dict()
     for name, label_true in dict_true.items():
         label_predict = dict_coord[name]
-        if label_true != ['0', '0', '0', '0\n'] :
+        if label_true != ['0', '0', '0', '0\n'] and label_predict != [0, 0, 0, 0]:
             scores_iou[name] = intersection_over_union(label_true, label_predict)
         else :
             scores_iou[name] = 0
@@ -244,7 +243,7 @@ def get_true_coordinates(image_list):
         with open(image,'r') as fp:
             ligne = fp.readline()
             liste = ligne.split(' ')
-            if liste == ['\n'] :
+            if liste == ['\n'] or liste == [''] :
                 liste = ['-1', '0','0','0','0\n']
                 liste_img_neg.append(image)
             labels_true[image[12:-4]] = [liste[1:]]
@@ -374,7 +373,7 @@ def liste_CIoU(dict_true, dict_coord, scores_iou):
     scores_c_iou = dict()
     for name, label_true in dict_true.items():
         label_predict = dict_coord[name]
-        if label_true != ['0', '0', '0', '0\n'] :
+        if label_true != ['0', '0', '0', '0\n'] and label_predict != [0, 0, 0, 0]:
             scores_c_iou[name] = c_iou(label_true, label_predict, scores_iou[name])
         else :
             scores_c_iou[name] = 0
@@ -708,6 +707,10 @@ def run(file, dossier_resultats, dossier_weights_cfg, weight, custom = True) :
 
 
     dict_coord, dict_coord_true, dict_pred = keep_best_predict(dict_coord, dict_coord_true, dict_pred)
+    #print("\ncoordonnées : \n", dict_coord)
+    #print("coordonnées réelles: \n", dict_coord_true)
+    #print("predictions : \n", dict_pred)
+    #print("scores iou : \n", scores_iou)
     scores_iou = liste_IoU(dict_coord_true,dict_coord)
     #print("\ncoordonnées : \n", dict_coord)
     #print("coordonnées réelles: \n", dict_coord_true)
@@ -760,8 +763,4 @@ def run_all(file) :
         run(file, dossier_resultats, dossier_weights_cfg, i, True)
     print("done")
 
-
-
-run('data/test.txt', '', '', '', True)
-#run_all('data/test.txt')
 
